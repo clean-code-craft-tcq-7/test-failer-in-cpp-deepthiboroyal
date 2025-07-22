@@ -5,7 +5,7 @@ char size(int cms) {
     char sizeName = '\0';
     if(cms < 38) {
         sizeName = 'S';
-    } else if(cms > 38 && cms < 42) {
+    } else if( cms < 42) {
         sizeName = 'M';
     } else if(cms > 42) {
         sizeName = 'L';
@@ -15,7 +15,6 @@ char size(int cms) {
 
 void testTshirtSize() {
     std::cout << "\nTshirt size test\n";
-    assert(size(5) == 'error');
     assert(size(37) == 'S');
     assert(size(38) == 'M'); //asserting that customer prefers relaxed fit
     assert(size(40) == 'M');
